@@ -102,6 +102,7 @@ def main():
     score_module.main()
 
     if args.score_only:
+        print_candidates(today)
         return
 
     if args.dry_run:

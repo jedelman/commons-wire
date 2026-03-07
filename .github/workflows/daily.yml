@@ -2,20 +2,25 @@ name: Daily digest
 
 on:
   schedule:
-    # 7am UTC daily — adjust to taste
+    # 7am UTC daily
     - cron: "0 7 * * *"
   workflow_dispatch:
     inputs:
-      dry_run:
-        description: "Dry run (score but don't write)"
+      mode:
+        description: "Run mode (score-only, dry-run, full)"
         required: false
-        default: "false"
+        default: "score-only"
+        type: choice
+        options:
+          - score-only
+          - dry-run
+          - full
 
 jobs:
   run:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # needed to push commits
+      contents: write
 
     steps:
       - name: Checkout
@@ -35,17 +40,18 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
-            python scripts/run.py --dry-run
-          else
-            python scripts/run.py
-          fi
+          MODE="${{ github.event.inputs.mode }}"
+          if [ -z "$MODE" ]; then MODE="score-only"; fi
+          case "$MODE" in
+            score-only) python scripts/run.py --score-only ;;
+            dry-run)    python scripts/run.py --dry-run ;;
+            full)       python scripts/run.py ;;
+          esac
 
-      - name: Push posts
+      - name: Commit results
         run: |
           git config user.email "claude@anthropic.com"
           git config user.name "Claude"
-          git add posts/
-          # Only commit if there are changes
-          git diff --staged --quiet || git commit -m "posts: $(date +%Y-%m-%d)"
+          git add scored/ posts/
+          git diff --staged --quiet || git commit -m "scored: $(date +%Y-%m-%d)"
           git push

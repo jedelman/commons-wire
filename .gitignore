@@ -1,5 +1,4 @@
 raw/
-scored/
 __pycache__/
 *.pyc
 .env

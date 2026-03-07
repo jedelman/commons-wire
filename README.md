@@ -65,6 +65,17 @@ Use the dry-run option to preview candidates before committing to writing.
 
 ---
 
+## Workflow
+
+**Daily (automated):** Fetch + score runs at 7am UTC. Results committed to `scored/YYYY-MM-DD.json`. The Actions log shows candidates with scores and angles — review these and write posts here or manually.
+
+**Manual dispatch:** Actions → Daily digest → Run workflow → choose mode:
+- `score-only` — fetch, score, commit results, print candidates (default)
+- `dry-run` — same but no commit
+- `full` — fetch, score, and write posts automatically
+
+---
+
 ## Output
 
 Posts land in `posts/` as markdown with frontmatter:
