@@ -91,7 +91,7 @@ def main():
         scored_path.write_text(json.dumps(all_scored, indent=2))
         return
 
-    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    client = anthropic.Anthropic()
 
     print(f"Scoring {len(to_score)} items...")
     newly_scored = []

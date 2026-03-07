@@ -139,7 +139,7 @@ def main():
         print("No new items to write.")
         return 0
 
-    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    client = anthropic.Anthropic()
     written = 0
 
     print(f"Writing {len(candidates)} post(s)...")

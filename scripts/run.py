@@ -86,6 +86,10 @@ def main():
     print(f"\ncommons-wire | {today}")
     print("=" * 40)
 
+    if not args.fetch_only and not os.environ.get("ANTHROPIC_API_KEY"):
+        print("ERROR: ANTHROPIC_API_KEY is not set.", file=sys.stderr)
+        sys.exit(1)
+
     # ── Stage 1: Fetch ─────────────────────────────────────────────
     print("\n[1/3] Fetching feeds...")
     n_items = fetch.main()
