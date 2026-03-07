@@ -23,6 +23,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import fetch
 import filter as score_module
 import write as write_module
+import generate_index
 import yaml
 
 CONFIG = yaml.safe_load((ROOT / "config.yaml").read_text())
@@ -103,6 +104,9 @@ def main():
 
     if args.score_only:
         print_candidates(today)
+        print("
+Regenerating index.html...")
+        generate_index.main()
         return
 
     if args.dry_run:
@@ -112,6 +116,11 @@ def main():
     # ── Stage 3: Write ─────────────────────────────────────────────
     print("\n[3/3] Writing posts...")
     n_written = write_module.main()
+
+    # ── Stage 3b: Regenerate index ────────────────────────────────────
+    print("
+[3b] Regenerating index.html...")
+    generate_index.main()
 
     # ── Stage 4: Commit ────────────────────────────────────────────
     if CONFIG["output"]["git_commit"] and n_written:
