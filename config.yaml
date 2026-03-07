@@ -1,0 +1,32 @@
+# commons-wire configuration
+
+pipeline:
+  # How many days back to look for items (avoids re-processing old content)
+  lookback_days: 2
+
+  # Minimum relevance score (0-10) to pass to the writing stage
+  relevance_threshold: 6
+
+  # Score at which an item is flagged as priority (written first)
+  priority_threshold: 8
+
+  # Max items to attempt writing per run (cost control)
+  max_posts_per_run: 3
+
+  # Max items to score per run (cost control)
+  max_items_to_score: 40
+
+model:
+  # Claude model to use for both scoring and writing
+  name: claude-sonnet-4-20250514
+  max_tokens: 1500
+
+output:
+  # Directory for generated posts (relative to repo root)
+  posts_dir: posts
+
+  # Directory for raw fetched items (gitignored)
+  raw_dir: raw
+
+  # If true, commit posts to git after each run
+  git_commit: true

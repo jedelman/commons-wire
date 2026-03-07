@@ -1,0 +1,104 @@
+# commons-wire feed sources
+# Add or remove sources here. The pipeline will pick them up on the next run.
+# Format: each entry needs `name`, `url`, and `category`.
+# Optional: `weight` (1-3, default 1) boosts items from high-signal sources.
+
+feeds:
+
+  # Labor & left press
+  - name: Labor Notes
+    url: https://labornotes.org/feed
+    category: labor
+
+  - name: In These Times
+    url: https://inthesetimes.com/feed
+    category: labor
+
+  - name: Jacobin
+    url: https://jacobin.com/feed/
+    category: labor
+    weight: 2
+
+  - name: Tribune UK
+    url: https://tribunemag.co.uk/feed
+    category: labor
+
+  # City / urban governance
+  - name: Next City
+    url: https://nextcity.org/feed
+    category: city
+    weight: 2
+
+  - name: Streetsblog USA
+    url: https://usa.streetsblog.org/feed
+    category: city
+
+  - name: Governing
+    url: https://www.governing.com/rss/all
+    category: city
+
+  # Platform / tech power
+  - name: 404 Media
+    url: https://www.404media.co/rss/
+    category: platform
+    weight: 2
+
+  - name: The Markup
+    url: https://themarkup.org/feeds/rss.xml
+    category: platform
+    weight: 2
+
+  - name: Platformer
+    url: https://www.platformer.news/rss/
+    category: platform
+
+  # Abolition / criminal justice
+  - name: The Appeal
+    url: https://theappeal.org/feed/
+    category: abolition
+    weight: 2
+
+  - name: Vera Institute
+    url: https://www.vera.org/rss.xml
+    category: abolition
+
+  # Commons / cooperative economy
+  - name: Shareable
+    url: https://www.shareable.net/feed/
+    category: commons
+    weight: 2
+
+  - name: P2P Foundation Blog
+    url: https://blog.p2pfoundation.net/feed
+    category: commons
+    weight: 2
+
+  # Feminist / intersectional
+  - name: Colorlines
+    url: https://colorlines.com/feed/
+    category: feminist
+
+  - name: The 19th
+    url: https://19thnews.org/feed/
+    category: feminist
+    weight: 2
+
+  # International left
+  - name: openDemocracy
+    url: https://www.opendemocracy.net/en/rss.xml
+    category: international
+
+  - name: ROAR Magazine
+    url: https://roarmag.org/feed/
+    category: international
+    weight: 2
+
+  # Mainstream (read against the grain)
+  - name: ProPublica
+    url: https://feeds.propublica.org/propublica/main
+    category: mainstream
+    weight: 2
+
+  - name: The Guardian Cities
+    url: https://www.theguardian.com/cities/rss
+    category: mainstream
