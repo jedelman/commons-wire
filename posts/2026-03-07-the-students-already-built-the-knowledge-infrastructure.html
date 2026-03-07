@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Students Already Built the Knowledge Infrastructure. The College Paid Millions to Replace It. — Commons Wire</title>
+  <meta name="description" content="California community colleges are spending millions on AI chatbots that can't name their own presidents, while the distributed knowledge systems that actually work — staff, Reddit, word of mouth — go unfunded." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1714; --paper: #f2ece0; --paper-mid: #e8dfc8;
+      --red: #a0291c; --rule: rgba(26,23,20,0.18); --rule-strong: rgba(26,23,20,0.45);
+      --display: 'Cormorant Garamond', Georgia, serif;
+      --body: 'Lora', Georgia, serif; --mono: 'DM Mono', monospace;
+      --max: 680px; --gutter: clamp(1.5rem, 5vw, 4rem);
+    }
+    html { font-size: 18px; scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--body); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    header { border-bottom: 2px solid var(--ink); padding: 1.25rem var(--gutter) 1rem; }
+    .header-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .site-name { font-family: var(--display); font-size: clamp(1rem,2.5vw,1.2rem); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+    .site-name:hover { color: var(--red); }
+    .header-links { display: flex; gap: 1.5rem; align-items: baseline; }
+    .header-link { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(26,23,20,0.45); text-decoration: none; }
+    .header-link:hover { color: var(--red); }
+    .page-wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+    .xl { color: var(--red); text-decoration: none; border-bottom: 1px solid rgba(160,41,28,0.28); transition: border-color 0.15s; }
+    .xl:hover { border-bottom-color: var(--red); }
+    footer { border-top: 1px solid var(--rule); padding: 2rem 0 3rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-note { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(26,23,20,0.35); }
+    .footer-link { color: rgba(26,23,20,0.35); text-decoration: none; }
+    .footer-link:hover { color: var(--red); }
+    .kicker { padding: clamp(2rem,5vw,3.5rem) 0 1.5rem; border-bottom: 1px solid var(--rule-strong); margin-bottom: 2rem; }
+    .kicker-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .kicker-label::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--red); flex-shrink: 0; }
+    .kicker-date { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(26,23,20,0.4); }
+    h1 { font-family: var(--display); font-size: clamp(2rem,7vw,3.2rem); font-weight: 700; line-height: 1.05; margin-bottom: 1rem; }
+    .dek { font-family: var(--display); font-size: clamp(1.05rem,2.5vw,1.25rem); font-style: italic; color: rgba(26,23,20,0.7); line-height: 1.55; }
+    .body-text { padding: 2rem 0; }
+    .body-text p { margin-bottom: 1.4rem; font-size: 1rem; line-height: 1.85; }
+    .body-text h2 { font-family: var(--display); font-size: 1.5rem; font-weight: 700; margin: 2rem 0 0.75rem; }
+    .body-text blockquote { border-left: 2px solid var(--rule-strong); padding: 0.25rem 0 0.25rem 1.25rem; margin: 1.5rem 0; color: rgba(26,23,20,0.75); font-style: italic; }
+    .source-line { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(26,23,20,0.4); padding: 1.5rem 0; border-top: 1px solid var(--rule); }
+    .source-line a { color: rgba(26,23,20,0.4); text-decoration: none; }
+    .source-line a:hover { color: var(--red); }
+    .post-nav { display: flex; justify-content: space-between; padding: 1.5rem 0; border-top: 1px solid var(--rule); gap: 1rem; flex-wrap: wrap; }
+    .nav-link { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); text-decoration: none; max-width: 45%; line-height: 1.5; }
+    .nav-link:hover { color: var(--red); }
+    .nav-prev { margin-left: auto; text-align: right; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .kicker { animation: fadeUp 0.6s ease both; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="../index.html" class="site-name">Commons Wire</a>
+      <nav class="header-links">
+        <a href="https://jedelman.github.io/power-explained" class="header-link">Power Explained</a>
+        <a href="https://github.com/jedelman/commons-wire" class="header-link">Source</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <div class="kicker">
+      <div class="kicker-label">Epistemic failure</div>
+      <div class="kicker-date">March 7, 2026</div>
+    </div>
+
+    <h1>The Students Already Built the Knowledge Infrastructure. The College Paid Millions to Replace It.</h1>
+    <p class="dek">California community colleges are spending millions on AI chatbots that can't name their own presidents, while the distributed knowledge systems that actually work — staff, Reddit, word of mouth — go unfunded.</p>
+
+    <div class="body-text">
+      <p>Reanna Carlson, student government vice president at Fresno City College, wanted to know if the campus food pantry was open. She asked the college's AI chatbot. It gave her a wrong answer. She added a typo to her query by accident. This time it worked.</p>
+      <p>That's the story. Everything else is detail.</p>
+      <p><a href="https://themarkup.org/machine-learning/2026/03/07/california-colleges-spend-millions-on-faulty-ai-systems-the-chatbot-is-outdated" class="xl" target="_blank" rel="noopener">The Markup and CalMatters reported this morning</a> on California community colleges spending millions on AI chatbots that consistently fail students: wrong office hours, wrong locations, a bot that couldn't correctly name its own college president. The Los Angeles Community College District has committed roughly $3.8 million to chatbot contracts through 2029. State Center is paying nearly $870,000 over three years for a system students describe as outdated and useless.</p>
+      <p>What the coverage mostly misses is a description of what was there before — and what students actually do when the bot fails them, which is most of the time.</p>
+      <p>Pablo Aguirre, a computer science student at East Los Angeles College, told the reporters what he does instead:</p>
+      <blockquote>"I just didn't find it as useful. Online, some pages don't work... That's where I just jump on Reddit."</blockquote>
+      <p>Carlson, asked how students navigate without reliable information, was more direct:</p>
+      <blockquote>"If it weren't for the amazing staff on campus that constantly remind students of our services, I'd be lost."</blockquote>
+      <p>There it is. The working knowledge infrastructure. Staff who know students by name. The Reddit thread where someone posted the right answer two semesters ago and it's still there. The student government officer who's been through financial aid twice and tells people what actually works. Distributed, informal, specific, and current — because the people who hold it have to live with being wrong.</p>
+      <p>This is what the framework we use here calls <em>distributed intelligence</em>: knowledge that lives in specific people with specific relationships to specific situations. A counselor who works the EOPS intake desk knows things no FAQ database can contain, because her knowledge was produced through encounter — through the particular student who couldn't find the form, the particular policy that changed last October, the particular workaround that actually gets people enrolled. That knowledge doesn't exist in a document. It exists in her.</p>
+      <p>The chatbot doesn't replace that. It simulates the surface form of it — the chat interface, the instant response, the appearance of a system that knows things — while hollowing out the substance.</p>
+      <p>To their credit, some officials know this. Esau Tovar, dean of enrollment services at Santa Monica College, the one district that came out relatively well in the reporting, explained his approach plainly:</p>
+      <blockquote>The college prioritizes keeping its website up to date so the bot provides "good answers with fewer errors" rather than "great answers with potentially more errors."</blockquote>
+      <p>That's an honest framing of the tradeoff — and it implicitly concedes the point. Accuracy depends entirely on how current and complete the underlying information is. Which means accuracy depends on <em>staff keeping the website updated</em>. The bot is a retrieval layer on top of human-maintained knowledge. When you defund the humans, the bot degrades. The knowledge infrastructure is still human. It's just less visible now, and less compensated.</p>
+      <p>The deeper problem is what the simulation makes possible in a budget meeting. When a district can point to a chatbot handling "thousands of conversations each month, many outside regular office hours," that's a number. Numbers justify headcount reductions. The chatbot's existence becomes the argument against hiring the counselor — not because anyone planned it that way, but because the simulation of support is measurable and the distributed knowledge system isn't.</p>
+      <p>The story has only been out a few hours and hasn't generated substantive public commentary yet. But the pattern it documents isn't new. <a href="https://themarkup.org/artificial-intelligence/2026/01/30/mamdani-to-kill-the-nyc-ai-chatbot-we-caught-telling-businesses-to-break-the-law" class="xl" target="_blank" rel="noopener">New York City's AI chatbot was terminated in February</a> after The Markup found it was advising businesses to break the law. Same mechanism, different domain: centralized AI system confidently dispensing wrong information, city paying for the privilege.</p>
+      <p>The typo that unlocked the right answer isn't a quirk. It's a precise image of the whole situation. The real knowledge was technically present somewhere in the system — but the centralized interface couldn't surface it until the query broke. Meanwhile the student government VP already knew the answer, the front-desk staff already knew the answer, the Reddit thread already had the answer.</p>
+      <p>The $3.8 million didn't build something new. It built a worse version of what the students were already doing for free — and made the thing that was actually working harder to see and harder to fund.</p>
+    </div>
+
+    <div class="source-line">
+      Via <a href="https://themarkup.org/machine-learning/2026/03/07/california-colleges-spend-millions-on-faulty-ai-systems-the-chatbot-is-outdated" target="_blank" rel="noopener">The Markup / CalMatters</a>
+    </div>
+
+    <nav class="post-nav">
+      
+      
+    </nav>
+
+  </main>
+
+  <footer class="page-wrap">
+    <span class="footer-note">
+      <a href="../index.html" class="footer-link">← All dispatches</a>
+    </span>
+    <span class="footer-note">
+      Built with <a href="https://github.com/jedelman/commons-wire" class="footer-link">commons-wire</a>
+      — <a href="https://jedelman.github.io/power-explained" class="footer-link">Power Explained</a>
+    </span>
+  </footer>
+
+</body>
+</html>
