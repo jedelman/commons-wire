@@ -18,8 +18,8 @@ pipeline:
 
 model:
   # Claude model to use for both scoring and writing
-  name: claude-sonnet-4-20250514
-  max_tokens: 1500
+  name: claude-sonnet-4-6
+  max_tokens: 2000
 
 output:
   # Directory for generated posts (relative to repo root)
