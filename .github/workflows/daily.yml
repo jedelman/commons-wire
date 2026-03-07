@@ -1,0 +1,51 @@
+name: Daily digest
+
+on:
+  schedule:
+    # 7am UTC daily — adjust to taste
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (score but don't write)"
+        required: false
+        default: "false"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to push commits
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            python scripts/run.py --dry-run
+          else
+            python scripts/run.py
+          fi
+
+      - name: Push posts
+        run: |
+          git config user.email "claude@anthropic.com"
+          git config user.name "Claude"
+          git add posts/
+          # Only commit if there are changes
+          git diff --staged --quiet || git commit -m "posts: $(date +%Y-%m-%d)"
+          git push
