@@ -104,8 +104,7 @@ def main():
 
     if args.score_only:
         print_candidates(today)
-        print("
-Regenerating index.html...")
+        print("\nRegenerating index.html...")
         generate_index.main()
         return
 
@@ -118,8 +117,7 @@ Regenerating index.html...")
     n_written = write_module.main()
 
     # ── Stage 3b: Regenerate index ────────────────────────────────────
-    print("
-[3b] Regenerating index.html...")
+    print("\n[3b] Regenerating index.html...")
     generate_index.main()
 
     # ── Stage 4: Commit ────────────────────────────────────────────
