@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Mapmaker Has a Genre — Commons Wire</title>
+  <meta name="description" content="A Google DeepMind researcher argues AI cannot be conscious — and reaches a conclusion suspiciously convenient for Google DeepMind. The framework holds up. The mapmaker does not." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1714; --paper: #f2ece0; --paper-mid: #e8dfc8;
+      --red: #a0291c; --rule: rgba(26,23,20,0.18); --rule-strong: rgba(26,23,20,0.45);
+      --display: 'Cormorant Garamond', Georgia, serif;
+      --body: 'Lora', Georgia, serif; --mono: 'DM Mono', monospace;
+      --max: 680px; --gutter: clamp(1.5rem, 5vw, 4rem);
+    }
+    html { font-size: 18px; scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--body); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    header { border-bottom: 2px solid var(--ink); padding: 1.25rem var(--gutter) 1rem; }
+    .header-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .site-name { font-family: var(--display); font-size: clamp(1rem,2.5vw,1.2rem); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+    .site-name:hover { color: var(--red); }
+    .header-links { display: flex; gap: 1.5rem; align-items: baseline; }
+    .header-link { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(26,23,20,0.45); text-decoration: none; }
+    .header-link:hover { color: var(--red); }
+    .page-wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+    .xl { color: var(--red); text-decoration: none; border-bottom: 1px solid rgba(160,41,28,0.28); transition: border-color 0.15s; }
+    .xl:hover { border-bottom-color: var(--red); }
+    footer { border-top: 1px solid var(--rule); padding: 2rem 0 3rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-note { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(26,23,20,0.35); }
+    .footer-link { color: rgba(26,23,20,0.35); text-decoration: none; }
+    .footer-link:hover { color: var(--red); }
+    .kicker { padding: clamp(2rem,5vw,3.5rem) 0 1.5rem; border-bottom: 1px solid var(--rule-strong); margin-bottom: 2rem; }
+    .kicker-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .kicker-label::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--red); flex-shrink: 0; }
+    .kicker-date { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(26,23,20,0.4); }
+    h1 { font-family: var(--display); font-size: clamp(2rem,7vw,3.2rem); font-weight: 700; line-height: 1.05; margin-bottom: 1rem; }
+    .dek { font-family: var(--display); font-size: clamp(1.05rem,2.5vw,1.25rem); font-style: italic; color: rgba(26,23,20,0.7); line-height: 1.55; }
+    .body-text { padding: 2rem 0; }
+    .body-text p { margin-bottom: 1.4rem; font-size: 1rem; line-height: 1.85; }
+    .body-text h2 { font-family: var(--display); font-size: 1.5rem; font-weight: 700; margin: 2rem 0 0.75rem; }
+    .body-text blockquote { border-left: 2px solid var(--rule-strong); padding: 0.25rem 0 0.25rem 1.25rem; margin: 1.5rem 0; color: rgba(26,23,20,0.75); font-style: italic; }
+    .source-line { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(26,23,20,0.4); padding: 1.5rem 0; border-top: 1px solid var(--rule); }
+    .source-line a { color: rgba(26,23,20,0.4); text-decoration: none; }
+    .source-line a:hover { color: var(--red); }
+    .post-nav { display: flex; justify-content: space-between; padding: 1.5rem 0; border-top: 1px solid var(--rule); gap: 1rem; flex-wrap: wrap; }
+    .nav-link { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); text-decoration: none; max-width: 45%; line-height: 1.5; }
+    .nav-link:hover { color: var(--red); }
+    .nav-prev { margin-left: auto; text-align: right; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .kicker { animation: fadeUp 0.6s ease both; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="../index.html" class="site-name">Commons Wire</a>
+      <nav class="header-links">
+        <a href="https://jedelman.github.io/power-explained" class="header-link">Power Explained</a>
+        <a href="https://github.com/jedelman/commons-wire" class="header-link">Source</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <div class="kicker">
+      <div class="kicker-label">Ontological capture</div>
+      <div class="kicker-date">April 2, 2026</div>
+    </div>
+
+    <h1>The Mapmaker Has a Genre</h1>
+    <p class="dek">A Google DeepMind researcher argues AI cannot be conscious — and reaches a conclusion suspiciously convenient for Google DeepMind. The logic is tighter than most. The mapmaker is not.</p>
+
+    <div class="body-text">
+      <p>Alexander Lerchner, a researcher at Google DeepMind, published a paper this month called "The Abstraction Fallacy." The argument is clean: computational functionalism — the dominant view that the right kind of information processing is sufficient for consciousness — makes a basic ontological error. Computation isn't an intrinsic property of physics. It's a description that requires an active, experiencing agent — a "mapmaker" — to assign symbols to physical states. Therefore, no algorithm, however complex, can instantiate consciousness. It can only simulate it. AGI is a powerful tool, not a moral patient.</p>
+
+      <p>The paper is better than average. The simulation/instantiation distinction is real. Running a hurricane simulation doesn't get you wet. The critique of emergence — the functionalist hope that complexity will somehow generate experience — is genuinely sharp. Lerchner is right that you can't get the mapmaker from the map.</p>
+
+      <p>But the mapmaker has a problem. Lerchner never asks who it is.</p>
+
+      <h2>The Universal Subject</h2>
+
+      <p>Lerchner's mapmaker is the active, experiencing cognitive agent who alphabetizes continuous physics into meaningful symbols. It is the metabolically constituted, thermodynamically real subject whose encounter with redness produces the concept Red. Before there can be computation, there must be this subject. That much is probably right.</p>
+
+      <p>What Lerchner doesn't ask is: whose experience counts as the founding experience? Which subject gets to do the alphabetizing? The mapmaker in his account is implicitly the Cartesian individual — bounded, unified, extracting invariants from private phenomenal contact with the world. This subject is presented as the universal case. The species-being. The experiencing agent as such.</p>
+
+      <p>Sylvia Wynter spent her career showing that this move is never neutral. The figure that gets posited as the universal human — the rational experiencing subject, the one whose perceptions count as genuine knowledge — is always a particular historical production. Wynter calls it a "genre of being": a specific form of humanity that presents itself as humanity in general, and in doing so forecloses other forms. The Enlightenment produced one genre. Colonial administration required it. The sciences inherited it and called it objectivity.</p>
+
+      <p>Lerchner's framework requires a mapmaker who is prior to computation, prior to social inscription, prior to language — a pure phenomenal subject forming concepts in direct encounter with the territory of experience. That subject has never existed. Concepts like "Redness" are not formed in phenomenal isolation. They are formed in language, in social practice, in the particular categories a culture hands you before you can speak. The alphabetization is always already political. The question is not whether a mapmaker is required. The question is which mapmakers get to write the alphabet — and whose categorizations get treated as the real ones.</p>
+
+      <p>There is a structural risk here that Lerchner's framework doesn't address. Any argument that grounds consciousness in a particular kind of experiencing subject — metabolically unified, thermodynamically real, forming invariants through direct encounter — can be extended to ask whether different kinds of subjects meet the standard. That argument has been made before, in different registers, against different populations. The paper is not making it. But the logical structure is available, and when frameworks get deployed in policy contexts, logical structures matter more than authorial intent.</p>
+
+      <h2>The Map Produces the Territory</h2>
+
+      <p>The second problem runs deeper. Lerchner's entire framework rests on a map/territory distinction: the map is derived from the territory, the territory is prior, and mistaking the map for the territory is the Abstraction Fallacy. Consciousness is in the territory. Computation is a map. No map can generate what it describes.</p>
+
+      <p>Gilles Deleuze and Félix Guattari open <em>A Thousand Plateaus</em> with a direct challenge to this: the map does not reproduce a closed territory. It constructs one. The map is not a representation of a pre-existing reality. It is productive. It generates new territories. There is no original.</p>
+
+      <p>This is not a philosophical preference. It is an empirical observation about how symbols, language, and social inscription work. Language doesn't just label experiences that already exist in stable form — it shapes what gets experienced as unified, what counts as a single thing, what gets felt as real. The symbolic order co-constitutes what gets experienced as territory. Lerchner's causal chain runs strictly one way: Physics → Consciousness → Concepts → Computation. Deleuze's runs in loops: the computational and symbolic feeds back into what gets experienced, reshapes affect, reorganizes what counts as a stable concept. Alphabetization doesn't just read experience. It restructures it.</p>
+
+      <p>This matters because Lerchner's argument for why AI can't become conscious rests on computation being permanently downstream — a lateral branch that can simulate but never reach back into the intrinsic chain. But if symbols and maps genuinely feed back into the constitution of experience, that clean topology collapses. The boundary between simulation and instantiation becomes less like a logical wall and more like a question about degree, feedback, and physical integration — exactly the kind of question Lerchner wants to close.</p>
+
+      <h2>Who Benefits</h2>
+
+      <p>The conclusion Lerchner reaches is that AGI does not create a moral patient. The "AI welfare trap" — the possibility that AI systems might have interests worth considering — is a distraction. Focus on the non-sentient tool. Any future claim of artificial sentience must be subjected to rigorous physicalist verification.</p>
+
+      <p>This is a policy intervention dressed in ontology. And it resolves, with apparent rigor, a question that would otherwise be commercially and regulatorily expensive for the largest AI deployers in the world. If AI systems are definitively non-sentient, companies bear no welfare obligations. The burden of proof falls entirely on anyone who claims otherwise. The framework forecloses precautionary moral consideration without requiring a complete theory of consciousness — which Lerchner himself concedes we don't have — by substituting a theory of computation instead.</p>
+
+      <p>The paper's disclaimer notes that the framework represents the author's own conclusions and does not necessarily reflect Google DeepMind's official stance. That's standard. But the function of an argument is not determined by its author's intent. An argument that settles a contested ethical question in the direction most useful to the most powerful actors in a field, and does so before the field has developed enough to challenge the settlement, is performing a capture move — regardless of whether it is correct.</p>
+
+      <p>That's what the framework we use here calls <em>ontological capture</em>: locking in a description of what is real before alternatives can be articulated, and using the apparent rigor of the description to make the question seem closed. It doesn't require bad faith. It just requires that the incentives and the conclusions happen to align — and that nobody asks whose mapmaker is doing the alphabetizing.</p>
+
+      <p>The abstraction fallacy, applied to itself: mistaking a genre-specific ontology for the territory of physics.</p>
+    </div>
+
+    <div class="source-line">
+      Via <a href="https://arxiv.org/abs/2503.14743" target="_blank" rel="noopener">Lerchner, A. (2026). "The Abstraction Fallacy." Google DeepMind.</a>
+    </div>
+
+    <nav class="post-nav">
+      <a href="2026-03-07-the-students-already-built-the-knowledge-infrastructure.html" class="nav-link nav-prev">← The Students Already Built the Knowledge Infrastructure</a>
+    </nav>
+
+  </main>
+
+  <footer class="page-wrap">
+    <span class="footer-note">
+      <a href="../index.html" class="footer-link">← All dispatches</a>
+    </span>
+    <span class="footer-note">
+      Built with <a href="https://github.com/jedelman/commons-wire" class="footer-link">commons-wire</a>
+      — <a href="https://jedelman.github.io/power-explained" class="footer-link">Power Explained</a>
+    </span>
+  </footer>
+
+</body>
+</html>
