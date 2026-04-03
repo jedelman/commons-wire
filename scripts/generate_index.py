@@ -23,6 +23,7 @@ CATEGORY_LABELS = {
     "prefigurative politics":"Prefigurative",
     "enclosure":             "Enclosure",
     "reproductive labor":    "Reproductive labor",
+    "ontological capture":   "Ontological capture",
     "general":               "Analysis",
 }
 
